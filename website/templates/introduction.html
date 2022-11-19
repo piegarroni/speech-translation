@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+  <head>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css"/>
+    <title> Introduction </title>   
+  </head>
+
+
+
+    <br><div style="border: 0px; margin-left: 10px;">
+      <p>if the plots don't load, go to google trends and reload this page two times:
+      <button class="button-13" type="button" style="max-width: 20%; height: auto; margin-top: 10px;">
+        <a href= "https://trends.google.com/trends/explore?date=now%207-d&q=%2Fm%2F030q7,trial">trends</a> </button></p>
+    </div><br>
+      
+    <div class = "responses">
+      <div class="response" action="/introduction" method="POST">
+        <h4>what is {{topic}} ({{domain}})?</h4>
+        <p> {{what}} </p> 
+      </div> 
+
+      <div class="response" action="/introduction" method="POST">
+        <h4>what topics are related to {{topic}}?</h4>
+        <p> {{what_topics}} </p> 
+      </div>    
+
+      <div class="response" action="/introduction" method="POST">
+        <h4>what are the latest development of {{topic}}?</h4>
+        <p> {{latest}} </p> 
+      </div>   <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+
+    <br>
+
+    <br>
+
+
+  </br>
+ 
+  <div style="width: 100%;"><br>
+      <div class = "plot">
+        <img style="max-width: 50%; height: auto; margin-top: 60px; float:left; " src="{{url_for('static', filename=network_filename)}}"/>
+        <p>{{message_net}}</p>
+      </div>
+
+      <div class = "plot">
+        <img style="max-width: 50%; height: auto; margin-top: 60px; float:right; " src="{{url_for('static', filename=trends_filename)}}" />
+        <p>{{message_trend}}</p>
+      </div> 
+        <br>
+      <div class = "mapplot">
+          <img src="{{url_for('static', filename = map_filename_topic)}}"/>
+        </div>
+     
+      <div class = "mapplot">
+          <img src="{{url_for('static', filename = map_filename_dom)}}"/>
+        </div>
+    </div> 
+        <!--<p>{{message_net}}</p>-->
+    
+  </body>
+</html>

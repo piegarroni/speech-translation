@@ -9,7 +9,7 @@ app=Flask(__name__, static_folder='./static')
 
 #app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-@app.route('/introduction')
+@app.route('/')
 def introduction():
     topic = "xxx"
     domain = "xxx"
